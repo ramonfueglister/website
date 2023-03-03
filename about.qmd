@@ -16,4 +16,4 @@ about:
 
 ---
 
-About this blog
+About this blog https://themockup.blog/posts/2022-11-08-use-r-to-generate-a-quarto-blogpost/
