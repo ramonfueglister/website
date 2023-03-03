@@ -11,4 +11,5 @@ page-layout: full
 title-block-banner: true
 ---
 
+Hallo und herzlich Willkommen auf der Homepage von Ramon Füglister
 
