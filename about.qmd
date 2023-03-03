@@ -17,3 +17,5 @@ about:
 ---
 
 About this blog https://themockup.blog/posts/2022-11-08-use-r-to-generate-a-quarto-blogpost/
+
+https://www.youtube.com/watch?v=uimdXPZc40I
