@@ -7,3 +7,14 @@ image: "image.jpg"
 ---
 
 This is a post with executable code.
+```{r}
+#| label: load-packages
+#| include: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+
+
+
+```
