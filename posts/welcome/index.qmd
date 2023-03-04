@@ -1,5 +1,5 @@
 ---
-title: "Welcome To My Blog"
+title: "1. Import von Daten in R/Python"
 author: "Ramon Füglister"
 date: "2024-04-03"
 categories: [news]

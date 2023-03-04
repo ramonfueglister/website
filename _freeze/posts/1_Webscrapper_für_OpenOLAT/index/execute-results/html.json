@@ -1,0 +1,16 @@
+{
+  "hash": "2edb8c7a3e3390b4d76d14267d223d36",
+  "result": {
+    "markdown": "---\ntitle: \"1. Einen Webscrapper für OpenOLAT basteln\"\nauthor: \"Ramon Füglister\"\ndate: \"2024-04-03\"\ncategories: [news]\n---\n\n\nThis is the first post in a Quarto blog. Welcome!\n\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/scatterplot-1.png){width=672}\n:::\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

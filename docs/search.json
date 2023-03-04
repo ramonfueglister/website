@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "website",
     "section": "",
-    "text": "Hallo und herzlich Willkommen auf der Homepage von Ramon Füglister\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2024\n\n\nRamon Füglister\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
+    "text": "Hallo und herzlich Willkommen auf der Homepage von Ramon Füglister\n\n:::{#quarto-listing-pipeline .hidden} \\(e = mC^2\\)\n:::{.hidden render-id=“pipeline-listing-listing”}\n:::{.list .quarto-listing-default}\n\n\n\n\n\n\n\n\n\n\n\n\nEinen Webscrapper für OpenOLAT basteln\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2024\n\n\nRamon Füglister\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEinen Webscrapper für OpenOLAT basteln\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2024\n\n\nRamon Füglister\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImport von Daten in R/Python\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nApr 3, 2024\n\n\nRamon Füglister\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 3, 2023\n\n\nHarlow Malloc\n\n\n\n\n:::\n\n\n\n\nNo matching items\n\n:::\n:::"
   },
   {
     "objectID": "about.html",
@@ -23,8 +23,22 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "1. Import von Daten in R/Python",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "posts/1_Webscrapper_für_OpenOLAT/index.html",
+    "href": "posts/1_Webscrapper_für_OpenOLAT/index.html",
+    "title": "1. Einen Webscrapper für OpenOLAT basteln",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()"
+  },
+  {
+    "objectID": "posts/2_Testdaten_in_R_importieren/index.html",
+    "href": "posts/2_Testdaten_in_R_importieren/index.html",
+    "title": "1. Einen Webscrapper für OpenOLAT basteln",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.4.1     ✔ purrr   1.0.1\n✔ tibble  3.1.8     ✔ dplyr   1.1.0\n✔ tidyr   1.3.0     ✔ stringr 1.5.0\n✔ readr   2.1.4     ✔ forcats 1.0.0\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nNew names:\n\n\n\n# Diese Funktion gibt alle Spaltennamen im Dataframe \"data\" zurück, die den Teilstring \"ZAG_00_Assessment_Sprache_und_Kommunikation\" enthalten und speichert sie in der Variable \"namen_items\".\nnamen_items <- names(data)[grep(\"ZAG_00_Assessment_Sprache_und_Kommunikation\", names(data))]\n\n# Diese Funktion entfernt alle Spalten, die in der Variable \"namen_items\" enthalten sind, aus dem Dataframe \"data\".\ndata <- data[, !names(data) %in% namen_items]\n\n\n# Diese Funktion setzt die Spaltennamen des Dataframes \"data\" auf die Werte in der ersten Zeile des Dataframes. \ncolnames(data) <- data[1,]\ndata <- data[-1,]\n\n# In dieser Schleife durchlaufen wir die in \"namen_items\" gespeicherten Namen der Items und ersetzen die Namen der Spalten \"Pkt\" durch die genaue Reihenfolge der Namen. Die Funktion grep() sucht nach dem Teilstring \"Pkt\" in den Spaltennamen und ersetzt ihn durch den aktuellen Namen des Items in der Schleife. Beachte, dass diese Schleife voraussetzt, dass die Namen in \"namen_items\" in der richtigen Reihenfolge sind und dass die Anzahl der \"Pkt\"-Spalten der Anzahl der Items in \"namen_items\" entspricht.\nfor (i in seq_along(namen_items)) {\n  colnames(data)[grep(\"Pkt\", colnames(data))] <- namen_items[i]\n}\n\n\n1+1\n\n[1] 2"
   }
 ]
