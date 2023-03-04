@@ -1,15 +1,13 @@
 ---
-title: "website"
+title: "Herzlich Willkommen auf Edumetric.ch"
 listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: true
+  categories: false
   sort-ui: false
   filter-ui: false
 page-layout: full
 title-block-banner: true
 ---
-
-Hallo und herzlich Willkommen auf der Homepage von Ramon Füglister
 
