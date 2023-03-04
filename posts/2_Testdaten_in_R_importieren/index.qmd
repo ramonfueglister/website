@@ -1,5 +1,5 @@
 ---
-title: "1. Einen Webscrapper für OpenOLAT basteln"
+title: "2. Testdateien in R importieren"
 author: "Ramon Füglister"
 date: "2024-04-03"
 categories: [news]

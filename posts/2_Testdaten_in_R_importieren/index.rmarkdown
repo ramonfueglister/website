@@ -1,0 +1,44 @@
+---
+title: "2. Testdateien in R importieren"
+author: "Ramon Füglister"
+date: "2024-04-03"
+categories: [news]
+---
+
+
+This is the first post in a Quarto blog. Welcome!
+
+
+```{r}
+#| label: load-packages
+#| echo: false
+# Daten einelesen
+library(readxl)
+library(tidyverse)
+data <- read_excel("C:/Users/Ramon/Desktop/sinlesa.xlsx")
+```
+
+```{r}
+
+
+
+# Diese Funktion gibt alle Spaltennamen im Dataframe "data" zurück, die den Teilstring "ZAG_00_Assessment_Sprache_und_Kommunikation" enthalten und speichert sie in der Variable "namen_items".
+namen_items <- names(data)[grep("ZAG_00_Assessment_Sprache_und_Kommunikation", names(data))]
+
+# Diese Funktion entfernt alle Spalten, die in der Variable "namen_items" enthalten sind, aus dem Dataframe "data".
+data <- data[, !names(data) %in% namen_items]
+
+
+# Diese Funktion setzt die Spaltennamen des Dataframes "data" auf die Werte in der ersten Zeile des Dataframes. 
+colnames(data) <- data[1,]
+data <- data[-1,]
+
+# In dieser Schleife durchlaufen wir die in "namen_items" gespeicherten Namen der Items und ersetzen die Namen der Spalten "Pkt" durch die genaue Reihenfolge der Namen. Die Funktion grep() sucht nach dem Teilstring "Pkt" in den Spaltennamen und ersetzt ihn durch den aktuellen Namen des Items in der Schleife. Beachte, dass diese Schleife voraussetzt, dass die Namen in "namen_items" in der richtigen Reihenfolge sind und dass die Anzahl der "Pkt"-Spalten der Anzahl der Items in "namen_items" entspricht.
+for (i in seq_along(namen_items)) {
+  colnames(data)[grep("Pkt", colnames(data))] <- namen_items[i]
+}
+```
+
+```{r}
+1+1
+```
