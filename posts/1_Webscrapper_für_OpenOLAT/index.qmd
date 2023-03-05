@@ -8,10 +8,36 @@ categories: [news]
 This is the first post in a Quarto blog. Welcome!
 
 ```{r}
-#| label: load-packages
-#| echo: false
+# Laden der benötigten Bibliotheken
+library(rvest)
 
-library(ggplot2)
+# Login-Informationen
+username <- "DEIN_BENUTZERNAME"
+password <- "DEIN_PASSWORT"
+
+# Ziel-URL des Logins
+login_url <- "https://www.beispielwebsite.com/login"
+
+# Erstellen des Sessions-Objekts und Abrufen der Login-Seite
+session <- html_session(login_url)
+login_page <- session %>% rvest::html_nodes("form") %>% .[[1]]
+
+# Erstellen der Login-Daten
+login_data <- list(
+  o_fiooldap_login_name = username,
+  o_fiooldap_login_pass = password
+)
+
+# Senden des Login-Requests
+response <- session %>% rvest::submit_form(login_page, login_data)
+
+# Überprüfen, ob die Anmeldung erfolgreich war
+if (response$url == login_url) {
+  stop("Anmeldung fehlgeschlagen")
+} else {
+  # Hier kannst du den Code für die Datenextraktion oder das Scraping einfügen
+}
+
 ```
 
 ```{r}
