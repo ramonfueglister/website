@@ -3,7 +3,7 @@ title: "Herzlich Willkommen auf Edumetric.ch"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: table
   categories: false
   sort-ui: false
   filter-ui: false
