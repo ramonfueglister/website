@@ -1,0 +1,23 @@
+---
+title: "3. Kompetenzmodellierung"
+author: "Ramon Füglister"
+date: "2024-04-03"
+categories: [R]
+---
+
+This is the first post in a Quarto blog. Welcome!
+
+```{r}
+#| label: load-packages
+#| echo: false
+# Daten einelesen
+library(readxl)
+library(tidyverse)
+data <- read_excel("C:/Users/Ramon/Desktop/sinlesa.xlsx")
+```
+
+
+
+```{r}
+1+1
+```
