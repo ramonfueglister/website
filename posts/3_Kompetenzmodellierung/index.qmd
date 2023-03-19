@@ -1,23 +1,171 @@
 ---
-title: "3. Kompetenzmodellierung"
+title: "3. Die kausale Revolution"
 author: "Ramon Füglister"
 date: "2024-04-03"
 categories: [R]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+## Die Kausale Revolution
 
-```{r}
-#| label: load-packages
-#| echo: false
-# Daten einelesen
-library(readxl)
-library(tidyverse)
-data <- read_excel("C:/Users/Ramon/Desktop/sinlesa.xlsx")
-```
+Worüber viel zu wenig gesprochen wird im Schulkontext - die kausale Revolution. Während der letzten 100 Jahre galt die mantraartig von jedem Absolventen eines Statistikgrundkurses wiederholte Behauptung "Korrelation ist nicht Kausalität". Damit ist gemeint, dass sich eine Korrelation (Wechselwirkung,Beziehung) zwischen zwei gemessenen Variablen (Werte) nicht zwingend als kausal (A beeinflusst B oder B beeinflusst A) herausstellen muss, sondern diese Beziehung womöglich auf eine Störvariable  oder andere Faktoren zurückzuführen ist. Als Beispiel lässt sich z.B. die Korrelation der Storchendichte in einer Gegend und der Anzahl in dieser Gegend geborenen Babies nennen. Nun ist es aber für Menschen mit Grundkenntnissen in Biologie schwierig diese Beziehung als kausal zu denken. 
+
+Seit dem Ende der 90er Jahre lässt sich diese Behauptung "Korrelation ist nicht Kausalität" nicht mehr in dieser Absolutheit aufrecht erhalten. Ausgehend von Judea Pearls Ideen (die mit dem "mathematischen Nobelpreis" geehrt wurden, entstand ein mathematisches aber mehr noch logisches Framework, welches ermöglicht auch kausale Schlüsse zu ziehen. Ein Kernbestandteil dieses Frameworks sind Directed Acylical Graphs (DAGs). DAG steht für "Directed Acyclic Graph", was auf Deutsch "Gerichteter azyklischer Graph" bedeutet. Ein DAG ist eine Art von Graph ähnlich wie ein Flussdiagramm, der aus miteinander verbundenen Knoten besteht, aber bestimmte logische Einschränkungen hat. Die Knoten sind gerichtet, das heisst, dass es einen Pfeil gibt, der von einem Knoten zu einem anderen zeigt. Der Graph enthält keine Zyklen, das heisst, dass es keinen Weg gibt, der zurück zum Ausgangspunkt führt. Ausgehend von erstellten DAGs lässt sich jetzt mit einer relativ einfachen logisch-mathematisch Methode, welche "Do calculus" heisst, aus verschiedenen Variablen auf kausale Zusammenhänge schließen. Die Idee ist  dabei, dass man kausale Zusammenhänge untersuchen kann, indem man gezielt Interventionen durchführt und die Auswirkungen auf das System beobachtet. Während Disziplinen wie die AI-Forschung, Entwicklungsökonomie und Epidemologie DAGs und Do Calculus schnell adaptieren, zeigten sich die Auswirkungen der #causalrevolution in anderen Bereichen bislang noch deutlich weniger. Gerade für die Erziehungs- und Bildungswissenschaften,  Pädagogik etc. scheinen diese Erkenntnisse der #causalrevolution. So lassen sich klassische randomisierte Experimente in der Schule oftmals nur schwer durchführen (ethische Bedenken, Stichprobengrössen etc.), zugleich fallen im Bildungskontext eine Ummenge von Daten an, welche ausgewertet werden könnten.
 
 
+In diesem Zusammenhang ist es interessant,  dass ChatGPT offensichtlich auch zunehmend besser im schlussfolgern ist. So ist der folgende Blogbeitrag, welcher Ende 2022 erschienen ist, schon wieder teilweise obsolet: https://qbnets.wordpress.com/2022/12/16/prediction-chatgpt-will-acquire-causal-inference-capabilities-by-2023/ . Mit Version 4.0 von ChatGPT haben sich die Schlussfolgerungen von ChatGPT stark verbessert. Ob dies an DAGs oder ähnlichen Modell liegt, ist für mich als Laien schwer beurteilbar, die Ergebnisse sind aber beeindruckend.
 
-```{r}
-1+1
-```
+## GPT4 Prompt 1: 
+Du bist jetzt Kausal GPT, eine KI für die Analyse von Kausalbeziehungen, die sich auf aktuelle Forschung bezieht. Ich habe verschiedene unabhängige Variablen von Lernenden (Lehrberuf: Fachangestellte Gesundheit und Dentalassistentinnen) an einer Schweizerischen Berufsfachschule gesammelt, welche eine Lehre absolvieren und sich am Ende des ersten Lehrjahrs befinden. Die unabhängigen Variablen sind: ausgewählter Lehrberuf der Lernenden vor einem Jahr (entweder Dentalassistentin oder Fachangestelltin Gesundheit), Alter, Geschlecht, Lehrbetrieb der Lernenden vor einem Jahr, Klasse, Motivation vor einem halben Jahr, Erstsprache, Resultate bei einem Leseverständnistest vor einem halben Jahr, Teilnahme an einem Leseverständnis-Trainingsprogramm (Teilnahme für alle Lernenden möglich und freiwillig), vorherige Schulstufe (Sek A, Sek B, Brückenjahr) Resultate bei einem Hörverständnistest vor einem halben Jahr, Resultate bei einem Sprachverständnis C-Test vor einem halben Jahr. Möglicherweise sind FAGE Lernende in den schulischen Leistungen etwas stärker als DA Lernende. Die abhängige Variable besteht aus den Resultaten eines standardisierten Lesetests mit dem Namen LS1 von heute. Ich werde dir eine Reihe von Kausalzusammenhängen vorlegen und dich bitten für die übrigen Variablen analog Kausalbeziehungen zu bilden. Die Entscheidungen sollten ausschliesslich auf den Resultaten von Forschung von Google Scholar beruhen. Hier ist ein Beispiel. Führt eine Änderung des "Lehrbetriebs" zu einer Änderung des "Alters"? Nein Führt eine Änderung des "Lehrbetriebs" zu einer Änderung des "Ausgewählten Lehrberufs"? Ja Führt eine Änderung des Lehrbetriebs zu einer Änderung der "Erstsprache"? Nein Bilde für sämtliche Variablen die Kausalbeziehungen im Stil von "Bewirkt eine Änderung von [varA] eine Änderung von [varB]? [Antwort Ja oder Nein] Denke scharf nach. Gehe Schritt für Schritt vor. Begründe kurz.
+
+
+## GPT 4 Prompt 2: Directed Acyclical Graphs (DAGs)
+
+## GPT 4 Output 1: Kausale Beziehungen
+
+* Führt eine Änderung des "Alters" zu einer Änderung des "Geschlechts"? Nein. Geschlecht und Alter sind unabhängige Variablen.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Motivation"? Nein. Motivation ist von vielen Faktoren abhängig, aber Alter allein ist kein ausschlaggebender Faktor.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung des "Ausgewählten Lehrberufs"? Ja. Studien zeigen, dass bestimmte Berufe geschlechtsspezifische Tendenzen aufweisen, obwohl dies nicht ausschließlich der Fall ist.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Motivation"? Nein. Geschlecht allein hat keinen direkten Einfluss auf die Motivation.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Erstsprache"? Nein. Die Erstsprache ist unabhängig von der Klasse.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Unterschiedliche Klassen können unterschiedliche Lehrmethoden und -umgebungen aufweisen, was zu unterschiedlichen Ergebnissen im Leseverständnistest führen kann.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Höhere Motivation kann zu einer besseren Leistung in Lesetests führen.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten Schwierigkeiten beim Leseverständnis haben.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Die Teilnahme an einem Trainingsprogramm kann die Lesefähigkeiten verbessern und zu besseren Testergebnissen führen.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Schüler mit unterschiedlichen schulischen Hintergründen können unterschiedliche Hörverständnisfähigkeiten aufweisen.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Schüler mit unterschiedlichen schulischen Hintergründen können unterschiedliche Sprachverständnisfähigkeiten aufweisen.
+
+* Führt eine Änderung der "Resultate bei einem Hörverständnistest" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Hörverständnis und Sprachverständnis sind miteinander verbunden, und eine Verbesserung des einen kann zu einer Verbesserung des anderen führen.
+
+* Führt eine Änderung der "Resultate bei einem Hörverständnistest" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Hörverständnis und Leseverständnis sind eng miteinander verbunden, da sie beide sprachliche Fähigkeiten sind. Eine Verbesserung im Hörverständnis kann auf eine allgemeine Verbesserung der sprachlichen Fähigkeiten hindeuten, die sich auch auf das Leseverständnis auswirken könnte.
+
+* Führt eine Änderung der "Resultate bei einem Sprachverständnis C-Test" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Sprachverständnis und Leseverständnis sind ebenfalls eng miteinander verbunden. Eine Verbesserung des Sprachverständnisses kann auf eine allgemeine Verbesserung der sprachlichen Fähigkeiten hindeuten, die sich auch auf das Leseverständnis auswirken könnte.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Nein. Alter allein ist kein entscheidender Faktor für die Resultate bei einem Leseverständnistest, obwohl es in Verbindung mit anderen Faktoren, wie z.B. Bildungshintergrund und Lehrmethoden, einen Einfluss haben kann.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Nein. Wie beim Leseverständnis ist auch das Alter allein kein entscheidender Faktor für die Resultate bei einem Hörverständnistest. Andere Faktoren, wie z.B. Bildungshintergrund und Lehrmethoden, können jedoch einen Einfluss haben.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Nein. Auch hier ist das Alter allein kein entscheidender Faktor für die Resultate bei einem Sprachverständnis C-Test. Andere Faktoren, wie z.B. Bildungshintergrund und Lehrmethoden, können jedoch einen Einfluss haben.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Nein. Geschlecht allein hat keinen direkten Einfluss auf die Ergebnisse eines Leseverständnistests. Es gibt jedoch Studien, die darauf hindeuten, dass es geschlechtsspezifische Unterschiede im Lernverhalten und in den Lernstrategien geben kann, die sich indirekt auf die Testergebnisse auswirken können.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Nein. Wie beim Leseverständnis hat auch das Geschlecht allein keinen direkten Einfluss auf die Ergebnisse eines Hörverständnistests. Geschlechtsspezifische Unterschiede im Lernverhalten und in den Lernstrategien können jedoch indirekt einen Einfluss haben.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Nein. Geschlecht allein hat keinen direkten Einfluss auf die Ergebnisse eines Sprachverständnis C-Tests. Wie bei den anderen Tests können geschlechtsspezifische Unterschiede im Lernverhalten und in den Lernstrategien jedoch indirekt einen Einfluss haben.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Motivation kann sich auf die allgemeine Lernbereitschaft und Anstrengung auswirken, was zu besseren Hörverständnisergebnissen führen kann.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Eine höhere Motivation kann zu einer besseren Leistung in Sprachverständnistests führen, da sie die Bereitschaft und Anstrengung der Schüler beeinflussen kann.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Da Hör- und Leseverständnis eng miteinander verbunden sind, kann die Teilnahme an einem Leseverständnis-Trainingsprogramm auch das Hörverständnis positiv beeinflussen.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Da Sprachverständnis und Leseverständnis eng miteinander verbunden sind, kann die Teilnahme an einem Leseverständnis-Trainingsprogramm auch das Sprachverständnis positiv beeinflussen.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Schüler mit unterschiedlichen schulischen Hintergründen können unterschiedliche Leseverständnisfähigkeiten aufweisen, was sich in den Testergebnissen widerspiegeln kann.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten Schwierigkeiten beim Hörverständnis haben, was sich in den Testergebnissen widerspiegeln kann.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten Schwierigkeiten beim Sprachverständnis haben, was sich in den Testergebnissen widerspiegeln kann.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Motivation"? Ja. Unterschiedliche Klassen können unterschiedliche Lehrmethoden, Lernumgebungen und soziale Dynamiken aufweisen, die sich auf die Motivation der Schüler auswirken können.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Die Verfügbarkeit, Förderung und Ermutigung zur Teilnahme an einem Leseverständnis-Trainingsprogramm können je nach Klasse variieren, was zu Unterschieden in der Teilnahme führen kann.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "vorherigen Schulstufe"? Nein. Die vorherige Schulstufe ist unabhängig von der aktuellen Klasse und ändert sich nicht aufgrund einer Änderung der Klasse.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Motivierte Schüler sind eher geneigt, an freiwilligen Trainingsprogrammen teilzunehmen, um ihre Fähigkeiten zu verbessern.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten eher geneigt sein, an einem Leseverständnis-Trainingsprogramm teilzunehmen, um ihre Fähigkeiten in der Testsprache zu verbessern.
+
+* Führt eine Änderung der "Resultate bei einem Leseverständnistest" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler, die in Leseverständnistests schlechter abschneiden, könnten eher geneigt sein, an einem Trainingsprogramm teilzunehmen, um ihre Fähigkeiten zu verbessern.
+
+* Führt eine Änderung der "Resultate bei einem Hörverständnistest" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler, die in Hörverständnistests schlechter abschneiden, könnten ebenfalls eher geneigt sein, an einem Trainingsprogramm teilzunehmen, um ihre Fähigkeiten zu verbessern, da Hör- und Leseverständnis eng miteinander verbunden sind.
+
+* Führt eine Änderung der "Resultate bei einem Sprachverständnis C-Test" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler, die in Sprachverständnistests schlechter abschneiden, könnten ebenfalls eher geneigt sein, an einem Trainingsprogramm teilzunehmen, um ihre Fähigkeiten zu verbessern, da Sprachverständnis und Leseverständnis eng miteinander verbunden sind.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Motivation"? Ja. Schüler aus unterschiedlichen vorherigen Schulstufen können unterschiedliche Bildungshintergründe und Erfahrungen haben, die ihre Motivation beeinflussen können.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler aus unterschiedlichen vorherigen Schulstufen könnten unterschiedliche Bedürfnisse und Fähigkeiten haben, was ihre Entscheidung beeinflussen kann, an einem Leseverständnis-Trainingsprogramm teilzunehmen.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Motivation"? Ja. Schüler mit unterschiedlichen Erstsprachen können unterschiedliche Herausforderungen und Bedürfnisse im Spracherwerb haben, die ihre Motivation beeinflussen können.
+
+* Führt eine Änderung des "Lehrbetriebs" zu einer Änderung der "Klasse"? Ja. Unterschiedliche Lehrbetriebe können Schüler in unterschiedliche Klassen einteilen, abhängig von v erschiedenen Faktoren wie Verfügbarkeit, Lehrpläne und Schülerzahl.
+
+* Führt eine Änderung des "Lehrbetriebs" zu einer Änderung der "Motivation"? Ja. Unterschiedliche Lehrbetriebe können unterschiedliche Lehrmethoden, Lernumgebungen und soziale Dynamiken aufweisen, die sich auf die Motivation der Schüler auswirken können.
+
+* Führt eine Änderung des "Lehrbetriebs" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Die Verfügbarkeit, Förderung und Ermutigung zur Teilnahme an einem Leseverständnis-Trainingsprogramm können je nach Lehrbetrieb variieren, was zu Unterschieden in der Teilnahme führen kann.
+
+* Führt eine Änderung des "Lehrbetriebs" zu einer Änderung der "vorherigen Schulstufe"? Nein. Die vorherige Schulstufe ist unabhängig vom Lehrbetrieb und ändert sich nicht aufgrund einer Änderung des Lehrbetriebs.
+
+* Führt eine Änderung des "Lehrbetriebs" zu einer Änderung der "Erstsprache"? Nein. Die Erstsprache eines Schülers ist unabhängig vom Lehrbetrieb und ändert sich nicht aufgrund einer Änderung des Lehrbetriebs.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Motivation"? Ja. Obwohl Geschlecht allein keinen direkten Einfluss auf die Motivation hat, können geschlechtsspezifische Unterschiede im Lernverhalten und in den Lernstrategien indirekt einen Einfluss haben.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Geschlechtsspezifische Unterschiede im Lernverhalten und in den Lernstrategien können die Entscheidung beeinflussen, an einem Leseverständnis-Trainingsprogramm teilzunehmen.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "vorherigen Schulstufe"? Nein. Die vorherige Schulstufe ist unabhängig vom Geschlecht und ändert sich nicht aufgrund einer Änderung des Geschlechts.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Erstsprache"? Nein. Die Erstsprache eines Schülers ist unabhängig vom Geschlecht und ändert sich nicht aufgrund einer Änderung des Geschlechts.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Motivation"? Ja. Motivation kann von verschiedenen Faktoren beeinflusst werden, einschließlich des Alters. Ältere Schüler können andere Lebenserfahrungen und Prioritäten haben, die ihre Motivation beeinflussen.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm"? Ja. Schüler unterschiedlichen Alters können unterschiedliche Bedürfnisse und Prioritäten haben, was ihre Entscheidung beeinflussen kann, an einem Leseverständnis-Trainingsprogramm teilzunehmen.
+
+*Führt eine Änderung des "Alters" zu einer Änderung der "vorherigen Schulstufe"? Nein. Die vorherige Schulstufe ist unabhängig vom Alter und ändert sich nicht aufgrund einer Änderung des Alters.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Erstsprache"? Nein. Die Erstsprache eines Schülers ist unabhängig vom Alter und ändert sich nicht aufgrund einer Änderung des Alters.
+
+* Führt eine Änderung des "Alters" zu einer Änderung der "Klasse"? Nein. Die Klasse, in der ein Schüler ist, hängt in der Regel von seinem Bildungsfortschritt und nicht direkt von seinem Alter ab.
+
+* Führt eine Änderung des "Alters" zu einer Änderung des "Lehrbetriebs"? Nein. Der Lehrbetrieb, bei dem ein Schüler seine Ausbildung absolviert, hängt nicht direkt vom Alter des Schülers ab.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung der "Klasse"? Nein. Die Klasse, in der ein Schüler ist, hängt in der Regel von seinem Bildungsfortschritt und nicht direkt vom Geschlecht ab.
+
+* Führt eine Änderung des "Geschlechts" zu einer Änderung des "Lehrbetriebs"? Nein. Der Lehrbetrieb, bei dem ein Schüler seine Ausbildung absolviert, hängt nicht direkt vom Geschlecht des Schülers ab.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Unterschiedliche Klassen können unterschiedliche Lehrmethoden, Lehrpläne und Lernumgebungen aufweisen, die sich auf die Leistung der Schüler in Leseverständnistests auswirken können.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Unterschiedliche Klassen können unterschiedliche Lehrmethoden, Lehrpläne und Lernumgebungen aufweisen, die sich auf die Leistung der Schüler in Hörverständnistests auswirken können.
+
+* Führt eine Änderung der "Klasse" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Unterschiedliche Klassen können unterschiedliche Lehrmethoden, Lehrpläne und Lernumgebungen aufweisen, die sich auf die Leistung der Schüler in Sprachverständnis C-Tests auswirken können.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Eine höhere Motivation kann zu einer besseren Leistung in Leseverständnistests führen, da sie die Bereitschaft und Anstrengung der Schüler beeinflussen kann.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Eine höhere Motivation kann zu einer besseren Leistung in Hörverständnistests führen, da sie die Bereitschaft und Anstrengung der Schüler beeinflussen kann.
+
+* Führt eine Änderung der "Motivation" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Eine höhere Motivation kann zu einer besseren Leistung in Sprachverständnis C-Tests führen, da sie die Bereitschaft und Anstrengung der Schüler beeinflussen kann.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Die Teilnahme an einem Leseverständnis-Trainingsprogramm kann die Fähigkeiten der Schüler verbessern und zu besseren Ergebnissen bei Leseverständnistests führen.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Die Teilnahme an einem Leseverständnis-Trainingsprogramm kann auch die allgemeinen Sprachverständnisfähigkeiten verbessern, die sich auf die Leistung in Hörverständnistests auswirken können.
+
+* Führt eine Änderung der "Teilnahme an einem Leseverständnis-Trainingsprogramm" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Die Teilnahme an einem Leseverständnis-Trainingsprogramm kann die allgemeinen Sprachverständnisfähigkeiten verbessern, die sich auf die Leistung in Sprachverständnis C-Tests auswirken können.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten in Leseverständnistests schlechter abschneiden als Schüler, deren Erstsprache die Testsprache ist.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten in Hörverständnistests schlechter abschneiden als Schüler, deren Erstsprache die Testsprache ist.
+
+* Führt eine Änderung der "Erstsprache" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Schüler, deren Erstsprache nicht die Sprache des Tests ist, könnten in Sprachverständnis C-Tests schlechter abschneiden als Schüler, deren Erstsprache die Testsprache ist.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Schüler aus unterschiedlichen vorherigen Schulstufen können unterschiedliche Bildungshintergründe und Erfahrungen haben, die ihre Leistung bei Leseverständnistests beeinflussen können.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Schüler aus unterschiedlichen vorherigen Schulstufen können unterschiedliche Bildungshintergründe und Erfahrungen haben, die ihre Leistung bei Hörverständnistests beeinflussen können.
+
+* Führt eine Änderung der "vorherigen Schulstufe" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Schüler aus unterschiedlichen vorherigen Schulstufen können unterschiedliche Bildungshintergründe und Erfahrungen haben, die ihre Leistung bei Sprachverständnis C-Tests beeinflussen können.
+
+* Führt eine Änderung des "ausgewählten Lehrberufs" zu einer Änderung der "Resultate bei einem Leseverständnistest"? Ja. Schüler in unterschiedlichen Lehrberufen könnten unterschiedliche Lehrpläne, Lehrmethoden und Anforderungen haben, die ihre Leistung bei Leseverständnistests beeinflussen können.
+
+* Führt eine Änderung des "ausgewählten Lehrberufs" zu einer Änderung der "Resultate bei einem Hörverständnistest"? Ja. Schüler in unterschiedlichen Lehrberufen könnten unterschiedliche Lehrpläne, Lehrmethoden und Anforderungen haben, die ihre Leistung bei Hörverständnistests beeinflussen können.
+
+* Führt eine Änderung des "ausgewählten Lehrberufs" zu einer Änderung der "Resultate bei einem Sprachverständnis C-Test"? Ja. Schüler in unterschiedlichen Lehrberufen könnten unterschiedliche Lehrpläne, Lehrmethoden und Anforderungen haben, die ihre Leistung bei Sprachverständnis C-Tests beeinflussen können.
+
+# GPT 4 Output 2: DAG
