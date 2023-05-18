@@ -5,7 +5,90 @@ date: "2024-04-03"
 categories: [R]
 ---
 
-## Die Kausale Revolution
+##
+
+R Code: # Erstellung des Ablaufdiagramms für das Betreibungsverfahren in der Schweiz
+
+diagram_schweiz <- grViz("
+
+digraph Betreibungsverfahren_Schweiz {
+
+ graph [label = 'Betreibungsverfahren in der Schweiz', fontsize = 18, fontcolor = 'blue']
+
+ node [shape = box, style = rounded, color = 'blue']
+
+
+ rechnung [label = 'Rechnung von Zalando']
+
+ mahnung [label = 'Mahnung']
+
+ betreibungsbegehren [label = 'Betreibungsbegehren']
+
+ zahlungsbefehl [label = 'Zahlungsbefehl']
+
+ rechtsvorschlag [label = 'Rechtsvorschlag']
+
+ pfandung [label = 'Pfändung']
+
+ verwertung [label = 'Verwertung']
+
+ abschluss [label = 'Abschluss des Verfahrens']
+
+
+ rechnung -> mahnung [label = 'Heiri bezahlt nicht']
+
+ mahnung -> betreibungsbegehren [label = 'Heiri bezahlt immer noch nicht']
+
+ betreibungsbegehren -> zahlungsbefehl [label = 'Zalando reicht Betreibungsbegehren ein']
+
+ zahlungsbefehl -> rechtsvorschlag [label = 'Heiri erhebt Rechtsvorschlag']
+
+ rechtsvorschlag -> pfandung [label = 'Gericht weist Rechtsvorschlag ab']
+
+ pfandung -> verwertung [label = 'Pfändung erfolgreich']
+
+ verwertung -> abschluss [label = 'Gegenstände verwertet']
+
+}
+
+")
+
+
+# Erstellung des Ablaufdiagramms für das Betreibungsverfahren in Indien
+
+diagram_indien <- grViz("
+
+digraph Betreibungsverfahren_Indien {
+
+ graph [label = 'Betreibungsverfahren in Indien', fontsize = 18, fontcolor = 'red']
+
+ node [shape = box, style = rounded, color = 'red']
+
+
+ rechnung [label = 'Rechnung von Zalando']
+
+ mahnung [label = 'Mahnung']
+
+ rechtliche_massnahme [label = 'Rechtliche Massnahme']
+
+ gerichtsverfahren [label = 'Gerichtsverfahren']
+
+ entscheidung [label = 'Entscheidung']
+
+ vollstreckung [label = 'Vollstreckung']
+
+ abschluss [label = 'Abschluss des Verfahrens']
+
+
+ rechnung -> mahnung [label = 'Heiri bezahlt nicht']
+
+ mahnung -> rechtliche_massnahme [label = 'Heiri
+
+
+
+
+
+## 1. Die Kausale Revolution
 
 Worüber viel zu wenig gesprochen wird im Schulkontext - die kausale Revolution. Während der letzten 100 Jahre galt die mantraartig von jedem Absolventen eines Statistikgrundkurses wiederholte Behauptung "Korrelation ist nicht Kausalität". Damit ist gemeint, dass sich eine Korrelation (Wechselwirkung,Beziehung) zwischen zwei gemessenen Variablen (Werte) nicht zwingend als kausal (A beeinflusst B oder B beeinflusst A) herausstellen muss, sondern diese Beziehung womöglich auf eine Störvariable  oder andere Faktoren zurückzuführen ist. Als Beispiel lässt sich z.B. die Korrelation der Storchendichte in einer Gegend und der Anzahl in dieser Gegend geborenen Babies nennen. Nun ist es aber für Menschen mit Grundkenntnissen in Biologie schwierig diese Beziehung als kausal zu denken. 
 
@@ -14,7 +97,7 @@ Seit dem Ende der 90er Jahre lässt sich diese Behauptung "Korrelation ist nicht
 
 In diesem Zusammenhang ist es interessant,  dass ChatGPT offensichtlich auch zunehmend besser im schlussfolgern ist. So ist der folgende Blogbeitrag, welcher Ende 2022 erschienen ist, schon wieder teilweise obsolet: https://qbnets.wordpress.com/2022/12/16/prediction-chatgpt-will-acquire-causal-inference-capabilities-by-2023/ . Mit Version 4.0 von ChatGPT haben sich die Schlussfolgerungen von ChatGPT stark verbessert. Ob dies an DAGs oder ähnlichen Modell liegt, ist für mich als Laien schwer beurteilbar, die Ergebnisse sind aber beeindruckend.
 
-## GPT4 Prompt 1: 
+## 2. Ein Fallbeispiel von ChatGPT kausal modellieren lassen (GPT4 Prompt 1) 
 Du bist jetzt Kausal GPT, eine KI für die Analyse von Kausalbeziehungen, die sich auf aktuelle Forschung bezieht. Ich habe verschiedene unabhängige Variablen von Lernenden (Lehrberuf: Fachangestellte Gesundheit und Dentalassistentinnen) an einer Schweizerischen Berufsfachschule gesammelt, welche eine Lehre absolvieren und sich am Ende des ersten Lehrjahrs befinden. Die unabhängigen Variablen sind: ausgewählter Lehrberuf der Lernenden vor einem Jahr (entweder Dentalassistentin oder Fachangestelltin Gesundheit), Alter, Geschlecht, Lehrbetrieb der Lernenden vor einem Jahr, Klasse, Motivation vor einem halben Jahr, Erstsprache, Resultate bei einem Leseverständnistest vor einem halben Jahr, Teilnahme an einem Leseverständnis-Trainingsprogramm (Teilnahme für alle Lernenden möglich und freiwillig), vorherige Schulstufe (Sek A, Sek B, Brückenjahr) Resultate bei einem Hörverständnistest vor einem halben Jahr, Resultate bei einem Sprachverständnis C-Test vor einem halben Jahr. Möglicherweise sind FAGE Lernende in den schulischen Leistungen etwas stärker als DA Lernende. Die abhängige Variable besteht aus den Resultaten eines standardisierten Lesetests mit dem Namen LS1 von heute. Ich werde dir eine Reihe von Kausalzusammenhängen vorlegen und dich bitten für die übrigen Variablen analog Kausalbeziehungen zu bilden. Die Entscheidungen sollten ausschliesslich auf den Resultaten von Forschung von Google Scholar beruhen. Hier ist ein Beispiel. Führt eine Änderung des "Lehrbetriebs" zu einer Änderung des "Alters"? Nein Führt eine Änderung des "Lehrbetriebs" zu einer Änderung des "Ausgewählten Lehrberufs"? Ja Führt eine Änderung des Lehrbetriebs zu einer Änderung der "Erstsprache"? Nein Bilde für sämtliche Variablen die Kausalbeziehungen im Stil von "Bewirkt eine Änderung von [varA] eine Änderung von [varB]? [Antwort Ja oder Nein] Denke scharf nach. Gehe Schritt für Schritt vor. Begründe kurz.
 
 
