@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -75,27 +75,29 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">EDUMETRIC</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -140,10 +142,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#die-kausale-revolution" id="toc-die-kausale-revolution" class="nav-link active" data-scroll-target="#die-kausale-revolution">Die Kausale Revolution</a></li>
-  <li><a href="#gpt4-prompt-1" id="toc-gpt4-prompt-1" class="nav-link" data-scroll-target="#gpt4-prompt-1">GPT4 Prompt 1:</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#erstellung-des-ablaufdiagramms-für-das-betreibungsverfahren-in-indien" id="toc-erstellung-des-ablaufdiagramms-für-das-betreibungsverfahren-in-indien" class="nav-link" data-scroll-target="#erstellung-des-ablaufdiagramms-für-das-betreibungsverfahren-in-indien">Erstellung des Ablaufdiagramms für das Betreibungsverfahren in Indien</a>
+  <ul class="collapse">
+  <li><a href="#die-kausale-revolution" id="toc-die-kausale-revolution" class="nav-link" data-scroll-target="#die-kausale-revolution">1. Die Kausale Revolution</a></li>
+  <li><a href="#ein-fallbeispiel-von-chatgpt-kausal-modellieren-lassen-gpt4-prompt-1" id="toc-ein-fallbeispiel-von-chatgpt-kausal-modellieren-lassen-gpt4-prompt-1" class="nav-link" data-scroll-target="#ein-fallbeispiel-von-chatgpt-kausal-modellieren-lassen-gpt4-prompt-1">2. Ein Fallbeispiel von ChatGPT kausal modellieren lassen (GPT4 Prompt 1)</a></li>
   <li><a href="#gpt-4-prompt-2-directed-acyclical-graphs-dags" id="toc-gpt-4-prompt-2-directed-acyclical-graphs-dags" class="nav-link" data-scroll-target="#gpt-4-prompt-2-directed-acyclical-graphs-dags">GPT 4 Prompt 2: Directed Acyclical Graphs (DAGs)</a></li>
   <li><a href="#gpt-4-output-1-kausale-beziehungen" id="toc-gpt-4-output-1-kausale-beziehungen" class="nav-link" data-scroll-target="#gpt-4-output-1-kausale-beziehungen">GPT 4 Output 1: Kausale Beziehungen</a></li>
+  </ul></li>
   <li><a href="#gpt-4-output-2-dag" id="toc-gpt-4-output-2-dag" class="nav-link" data-scroll-target="#gpt-4-output-2-dag">GPT 4 Output 2: DAG</a></li>
   </ul>
 </nav>
@@ -154,14 +160,54 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>R Code: # Erstellung des Ablaufdiagramms für das Betreibungsverfahren in der Schweiz</p>
+<p>diagram_schweiz &lt;- grViz(”</p>
+<p>digraph Betreibungsverfahren_Schweiz {</p>
+<p>graph [label = ‘Betreibungsverfahren in der Schweiz’, fontsize = 18, fontcolor = ‘blue’]</p>
+<p>node [shape = box, style = rounded, color = ‘blue’]</p>
+<p>rechnung [label = ‘Rechnung von Zalando’]</p>
+<p>mahnung [label = ‘Mahnung’]</p>
+<p>betreibungsbegehren [label = ‘Betreibungsbegehren’]</p>
+<p>zahlungsbefehl [label = ‘Zahlungsbefehl’]</p>
+<p>rechtsvorschlag [label = ‘Rechtsvorschlag’]</p>
+<p>pfandung [label = ‘Pfändung’]</p>
+<p>verwertung [label = ‘Verwertung’]</p>
+<p>abschluss [label = ‘Abschluss des Verfahrens’]</p>
+<p>rechnung -&gt; mahnung [label = ‘Heiri bezahlt nicht’]</p>
+<p>mahnung -&gt; betreibungsbegehren [label = ‘Heiri bezahlt immer noch nicht’]</p>
+<p>betreibungsbegehren -&gt; zahlungsbefehl [label = ‘Zalando reicht Betreibungsbegehren ein’]</p>
+<p>zahlungsbefehl -&gt; rechtsvorschlag [label = ‘Heiri erhebt Rechtsvorschlag’]</p>
+<p>rechtsvorschlag -&gt; pfandung [label = ‘Gericht weist Rechtsvorschlag ab’]</p>
+<p>pfandung -&gt; verwertung [label = ‘Pfändung erfolgreich’]</p>
+<p>verwertung -&gt; abschluss [label = ‘Gegenstände verwertet’]</p>
+<p>}</p>
+<p>“)</p>
+</section>
+<section id="erstellung-des-ablaufdiagramms-für-das-betreibungsverfahren-in-indien" class="level1">
+<h1>Erstellung des Ablaufdiagramms für das Betreibungsverfahren in Indien</h1>
+<p>diagram_indien &lt;- grViz(”</p>
+<p>digraph Betreibungsverfahren_Indien {</p>
+<p>graph [label = ‘Betreibungsverfahren in Indien’, fontsize = 18, fontcolor = ‘red’]</p>
+<p>node [shape = box, style = rounded, color = ‘red’]</p>
+<p>rechnung [label = ‘Rechnung von Zalando’]</p>
+<p>mahnung [label = ‘Mahnung’]</p>
+<p>rechtliche_massnahme [label = ‘Rechtliche Massnahme’]</p>
+<p>gerichtsverfahren [label = ‘Gerichtsverfahren’]</p>
+<p>entscheidung [label = ‘Entscheidung’]</p>
+<p>vollstreckung [label = ‘Vollstreckung’]</p>
+<p>abschluss [label = ‘Abschluss des Verfahrens’]</p>
+<p>rechnung -&gt; mahnung [label = ‘Heiri bezahlt nicht’]</p>
+<p>mahnung -&gt; rechtliche_massnahme [label = ’Heiri</p>
 <section id="die-kausale-revolution" class="level2">
-<h2 class="anchored" data-anchor-id="die-kausale-revolution">Die Kausale Revolution</h2>
+<h2 class="anchored" data-anchor-id="die-kausale-revolution">1. Die Kausale Revolution</h2>
 <p>Worüber viel zu wenig gesprochen wird im Schulkontext - die kausale Revolution. Während der letzten 100 Jahre galt die mantraartig von jedem Absolventen eines Statistikgrundkurses wiederholte Behauptung “Korrelation ist nicht Kausalität”. Damit ist gemeint, dass sich eine Korrelation (Wechselwirkung,Beziehung) zwischen zwei gemessenen Variablen (Werte) nicht zwingend als kausal (A beeinflusst B oder B beeinflusst A) herausstellen muss, sondern diese Beziehung womöglich auf eine Störvariable oder andere Faktoren zurückzuführen ist. Als Beispiel lässt sich z.B. die Korrelation der Storchendichte in einer Gegend und der Anzahl in dieser Gegend geborenen Babies nennen. Nun ist es aber für Menschen mit Grundkenntnissen in Biologie schwierig diese Beziehung als kausal zu denken.</p>
 <p>Seit dem Ende der 90er Jahre lässt sich diese Behauptung “Korrelation ist nicht Kausalität” nicht mehr in dieser Absolutheit aufrecht erhalten. Ausgehend von Judea Pearls Ideen (die mit dem “mathematischen Nobelpreis” geehrt wurden, entstand ein mathematisches aber mehr noch logisches Framework, welches ermöglicht auch kausale Schlüsse zu ziehen. Ein Kernbestandteil dieses Frameworks sind Directed Acylical Graphs (DAGs). DAG steht für “Directed Acyclic Graph”, was auf Deutsch “Gerichteter azyklischer Graph” bedeutet. Ein DAG ist eine Art von Graph ähnlich wie ein Flussdiagramm, der aus miteinander verbundenen Knoten besteht, aber bestimmte logische Einschränkungen hat. Die Knoten sind gerichtet, das heisst, dass es einen Pfeil gibt, der von einem Knoten zu einem anderen zeigt. Der Graph enthält keine Zyklen, das heisst, dass es keinen Weg gibt, der zurück zum Ausgangspunkt führt. Ausgehend von erstellten DAGs lässt sich jetzt mit einer relativ einfachen logisch-mathematisch Methode, welche “Do calculus” heisst, aus verschiedenen Variablen auf kausale Zusammenhänge schließen. Die Idee ist dabei, dass man kausale Zusammenhänge untersuchen kann, indem man gezielt Interventionen durchführt und die Auswirkungen auf das System beobachtet. Während Disziplinen wie die AI-Forschung, Entwicklungsökonomie und Epidemologie DAGs und Do Calculus schnell adaptieren, zeigten sich die Auswirkungen der #causalrevolution in anderen Bereichen bislang noch deutlich weniger. Gerade für die Erziehungs- und Bildungswissenschaften, Pädagogik etc. scheinen diese Erkenntnisse der #causalrevolution. So lassen sich klassische randomisierte Experimente in der Schule oftmals nur schwer durchführen (ethische Bedenken, Stichprobengrössen etc.), zugleich fallen im Bildungskontext eine Ummenge von Daten an, welche ausgewertet werden könnten.</p>
 <p>In diesem Zusammenhang ist es interessant, dass ChatGPT offensichtlich auch zunehmend besser im schlussfolgern ist. So ist der folgende Blogbeitrag, welcher Ende 2022 erschienen ist, schon wieder teilweise obsolet: https://qbnets.wordpress.com/2022/12/16/prediction-chatgpt-will-acquire-causal-inference-capabilities-by-2023/ . Mit Version 4.0 von ChatGPT haben sich die Schlussfolgerungen von ChatGPT stark verbessert. Ob dies an DAGs oder ähnlichen Modell liegt, ist für mich als Laien schwer beurteilbar, die Ergebnisse sind aber beeindruckend.</p>
 </section>
-<section id="gpt4-prompt-1" class="level2">
-<h2 class="anchored" data-anchor-id="gpt4-prompt-1">GPT4 Prompt 1:</h2>
+<section id="ein-fallbeispiel-von-chatgpt-kausal-modellieren-lassen-gpt4-prompt-1" class="level2">
+<h2 class="anchored" data-anchor-id="ein-fallbeispiel-von-chatgpt-kausal-modellieren-lassen-gpt4-prompt-1">2. Ein Fallbeispiel von ChatGPT kausal modellieren lassen (GPT4 Prompt 1)</h2>
 <p>Du bist jetzt Kausal GPT, eine KI für die Analyse von Kausalbeziehungen, die sich auf aktuelle Forschung bezieht. Ich habe verschiedene unabhängige Variablen von Lernenden (Lehrberuf: Fachangestellte Gesundheit und Dentalassistentinnen) an einer Schweizerischen Berufsfachschule gesammelt, welche eine Lehre absolvieren und sich am Ende des ersten Lehrjahrs befinden. Die unabhängigen Variablen sind: ausgewählter Lehrberuf der Lernenden vor einem Jahr (entweder Dentalassistentin oder Fachangestelltin Gesundheit), Alter, Geschlecht, Lehrbetrieb der Lernenden vor einem Jahr, Klasse, Motivation vor einem halben Jahr, Erstsprache, Resultate bei einem Leseverständnistest vor einem halben Jahr, Teilnahme an einem Leseverständnis-Trainingsprogramm (Teilnahme für alle Lernenden möglich und freiwillig), vorherige Schulstufe (Sek A, Sek B, Brückenjahr) Resultate bei einem Hörverständnistest vor einem halben Jahr, Resultate bei einem Sprachverständnis C-Test vor einem halben Jahr. Möglicherweise sind FAGE Lernende in den schulischen Leistungen etwas stärker als DA Lernende. Die abhängige Variable besteht aus den Resultaten eines standardisierten Lesetests mit dem Namen LS1 von heute. Ich werde dir eine Reihe von Kausalzusammenhängen vorlegen und dich bitten für die übrigen Variablen analog Kausalbeziehungen zu bilden. Die Entscheidungen sollten ausschliesslich auf den Resultaten von Forschung von Google Scholar beruhen. Hier ist ein Beispiel. Führt eine Änderung des “Lehrbetriebs” zu einer Änderung des “Alters”? Nein Führt eine Änderung des “Lehrbetriebs” zu einer Änderung des “Ausgewählten Lehrberufs”? Ja Führt eine Änderung des Lehrbetriebs zu einer Änderung der “Erstsprache”? Nein Bilde für sämtliche Variablen die Kausalbeziehungen im Stil von “Bewirkt eine Änderung von [varA] eine Änderung von [varB]? [Antwort Ja oder Nein] Denke scharf nach. Gehe Schritt für Schritt vor. Begründe kurz.</p>
 </section>
 <section id="gpt-4-prompt-2-directed-acyclical-graphs-dags" class="level2">
@@ -247,6 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Führt eine Änderung des “ausgewählten Lehrberufs” zu einer Änderung der “Resultate bei einem Sprachverständnis C-Test”? Ja. Schüler in unterschiedlichen Lehrberufen könnten unterschiedliche Lehrpläne, Lehrmethoden und Anforderungen haben, die ihre Leistung bei Sprachverständnis C-Tests beeinflussen können.</p></li>
 </ul>
 </section>
+</section>
 <section id="gpt-4-output-2-dag" class="level1">
 <h1>GPT 4 Output 2: DAG</h1>
 
@@ -281,9 +328,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -348,6 +409,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
